@@ -1,0 +1,10 @@
+targets:
+  $default:
+    builders:
+      freezed:
+        options:
+          generic_argument_factories: true
+      json_serializable:
+        options:
+          explicit_to_json: true
+          generic_argument_factories: true
