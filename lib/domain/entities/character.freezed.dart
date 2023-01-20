@@ -23,6 +23,7 @@ mixin _$Character {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   Thumbnail? get thumbnail => throw _privateConstructorUsedError;
+  ComicsUrlResponse? get comics => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,9 +36,11 @@ abstract class $CharacterCopyWith<$Res> {
   factory $CharacterCopyWith(Character value, $Res Function(Character) then) =
       _$CharacterCopyWithImpl<$Res, Character>;
   @useResult
-  $Res call({int id, String name, Thumbnail? thumbnail});
+  $Res call(
+      {int id, String name, Thumbnail? thumbnail, ComicsUrlResponse? comics});
 
   $ThumbnailCopyWith<$Res>? get thumbnail;
+  $ComicsUrlResponseCopyWith<$Res>? get comics;
 }
 
 /// @nodoc
@@ -56,6 +59,7 @@ class _$CharacterCopyWithImpl<$Res, $Val extends Character>
     Object? id = null,
     Object? name = null,
     Object? thumbnail = freezed,
+    Object? comics = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -70,6 +74,10 @@ class _$CharacterCopyWithImpl<$Res, $Val extends Character>
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as Thumbnail?,
+      comics: freezed == comics
+          ? _value.comics
+          : comics // ignore: cast_nullable_to_non_nullable
+              as ComicsUrlResponse?,
     ) as $Val);
   }
 
@@ -84,6 +92,18 @@ class _$CharacterCopyWithImpl<$Res, $Val extends Character>
       return _then(_value.copyWith(thumbnail: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ComicsUrlResponseCopyWith<$Res>? get comics {
+    if (_value.comics == null) {
+      return null;
+    }
+
+    return $ComicsUrlResponseCopyWith<$Res>(_value.comics!, (value) {
+      return _then(_value.copyWith(comics: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -93,10 +113,13 @@ abstract class _$$_CharacterCopyWith<$Res> implements $CharacterCopyWith<$Res> {
       __$$_CharacterCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String name, Thumbnail? thumbnail});
+  $Res call(
+      {int id, String name, Thumbnail? thumbnail, ComicsUrlResponse? comics});
 
   @override
   $ThumbnailCopyWith<$Res>? get thumbnail;
+  @override
+  $ComicsUrlResponseCopyWith<$Res>? get comics;
 }
 
 /// @nodoc
@@ -113,6 +136,7 @@ class __$$_CharacterCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? thumbnail = freezed,
+    Object? comics = freezed,
   }) {
     return _then(_$_Character(
       id: null == id
@@ -127,6 +151,10 @@ class __$$_CharacterCopyWithImpl<$Res>
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as Thumbnail?,
+      comics: freezed == comics
+          ? _value.comics
+          : comics // ignore: cast_nullable_to_non_nullable
+              as ComicsUrlResponse?,
     ));
   }
 }
@@ -134,7 +162,8 @@ class __$$_CharacterCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Character extends _Character {
-  const _$_Character({required this.id, required this.name, this.thumbnail})
+  const _$_Character(
+      {required this.id, required this.name, this.thumbnail, this.comics})
       : super._();
 
   factory _$_Character.fromJson(Map<String, dynamic> json) =>
@@ -146,10 +175,12 @@ class _$_Character extends _Character {
   final String name;
   @override
   final Thumbnail? thumbnail;
+  @override
+  final ComicsUrlResponse? comics;
 
   @override
   String toString() {
-    return 'Character(id: $id, name: $name, thumbnail: $thumbnail)';
+    return 'Character(id: $id, name: $name, thumbnail: $thumbnail, comics: $comics)';
   }
 
   @override
@@ -160,12 +191,13 @@ class _$_Character extends _Character {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.thumbnail, thumbnail) ||
-                other.thumbnail == thumbnail));
+                other.thumbnail == thumbnail) &&
+            (identical(other.comics, comics) || other.comics == comics));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, thumbnail);
+  int get hashCode => Object.hash(runtimeType, id, name, thumbnail, comics);
 
   @JsonKey(ignore: true)
   @override
@@ -185,7 +217,8 @@ abstract class _Character extends Character {
   const factory _Character(
       {required final int id,
       required final String name,
-      final Thumbnail? thumbnail}) = _$_Character;
+      final Thumbnail? thumbnail,
+      final ComicsUrlResponse? comics}) = _$_Character;
   const _Character._() : super._();
 
   factory _Character.fromJson(Map<String, dynamic> json) =
@@ -197,6 +230,8 @@ abstract class _Character extends Character {
   String get name;
   @override
   Thumbnail? get thumbnail;
+  @override
+  ComicsUrlResponse? get comics;
   @override
   @JsonKey(ignore: true)
   _$$_CharacterCopyWith<_$_Character> get copyWith =>

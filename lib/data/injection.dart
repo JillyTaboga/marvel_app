@@ -2,6 +2,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'apis/marvel_characters/characters_api.dart';
 import 'apis/marvel_characters/marvel_api_characters_impl.dart';
+import 'apis/marvel_comics/marvel_api_comic_impl.dart';
 import 'packages/giroscope/giroscope.dart';
 import 'packages/giroscope/sensor_plus_giroscope.dart';
 import 'packages/http/http_client.dart';
@@ -16,3 +17,5 @@ final charactersApi = Provider<CharactersApi>((ref) {
 });
 
 final gyroscope = Provider<Giroscope>((ref) => SensorPlusGiroscope());
+
+final comicApi = Provider((ref) => MarvelApiComicsImpl(ref.watch(httpClient)));

@@ -1,16 +1,7 @@
 # marvel_app
 
-A new Flutter project.
+Estudo cujo objetivo era aplicar uma lista infinita com uso do FutureProvider do Riverpod
 
-## Getting Started
+Foi aproveitado para aplicar o giroscópio do celular para criar um efeito paralax como se objetos fosse 3D e possuíssem física.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Por fim também foi abordado algumas transições animadas de objetos.

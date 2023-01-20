@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import 'comics.dart';
+
 part 'character.freezed.dart';
 part 'character.g.dart';
 
@@ -10,6 +12,7 @@ class Character with _$Character {
     required int id,
     required String name,
     Thumbnail? thumbnail,
+    ComicsUrlResponse? comics,
   }) = _Character;
 
   factory Character.fromJson(Map<String, dynamic> json) =>
